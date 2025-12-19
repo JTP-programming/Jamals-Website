@@ -12,6 +12,8 @@ h1 {
 
 .container {
   display: flex;
+  flex-direction: column;
+  gap: 70px;
 }
 
 .Jamal {
@@ -94,7 +96,7 @@ body {
 
 .content {
   display: flex;
-  gap: 50px;
+  gap: 100px;
   /* border: 10px solid red; */
   /* align-items: center; */
   justify-content: end;
@@ -200,7 +202,6 @@ img {
 }
 
 .achievement_box {
-  padding-top: 50px;
   gap: 40px;
   display: flex;
   flex-direction: row;
@@ -210,7 +211,6 @@ img {
 }
 
 .internship_box {
-  padding-top: 50px;
   gap: 40px;
   display: flex;
   flex-direction: row;
@@ -291,16 +291,5 @@ img {
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 400%;
     color: #909090;
-  }
-
-  img {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  .left {
-    width: auto;
   }
 }
