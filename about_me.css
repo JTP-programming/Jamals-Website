@@ -392,7 +392,7 @@ img {
   .nav_bar {
     gap: 40px;
     display: flex;
-    justify-content: start;
+    justify-content: center;
   }
 
   .container {
