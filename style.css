@@ -167,4 +167,7 @@ img {
     min-height: 100vh;
     clip-path: none;
   }
+  .nav_button {
+    width: 20px;
+  }
 }
