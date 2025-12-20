@@ -251,7 +251,7 @@ img {
   transform: translateY(-7px);
   padding: 20px;
   border: 1px solid #0c0c15;
-  width: 400px;
+  width: 365px;
   border-radius: 20px;
   background-color: #161f99;
 }
@@ -266,6 +266,10 @@ img {
     text-decoration-thickness: 10px;
     opacity: 100%;
     animation: Fade 3s, linear;
+  }
+
+  .card {
+    width: 365px;
   }
 
   .internship {
