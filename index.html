@@ -3,45 +3,208 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jamal</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="favicon.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
-    <div class="container">
-      <div class="left">
-        <div class="text">
-          <h2>Hi, I am</h2>
-          <div class="name">
-            <h1>Jamal</h1>
-            <h1>Muhammed</h1>
+    <nav class="nav_bar">
+      <a><p class="skill-text">About</p></a>
+      <a><p class="skill-text">Experience</p></a>
+      <a><p class="skill-text">Projects</p></a>
+      <button class="nav-button">Contact Me</button>
+    </nav>
+
+    <main class="container">
+      <section class="welcome">
+        <div class="hello">
+          <h4>👋 Hello there! I'm Jamal</h4>
+        </div>
+
+        <div class="welcome_content">
+          <div class="left">
+            <h1 class="title">
+              Aspiring <span class="colored">Software</span>
+              <span class="engine_color">Engineer</span>
+            </h1>
+
+            <div class="paragraph">
+              <p class="content">I'm a 14-year-old developer who loves</p>
+              <p class="content">building cool things, learning new tech,</p>
+              <p class="content">and solving puzzles! 🚀</p>
+            </div>
+
+            <div class="button_div">
+              <button class="button">View My Work</button>
+              <button class="button2">Get in touch</button>
+            </div>
           </div>
-          <p>An aspiring software engineer</p>
+
+          <div class="right">
+            <div class="right-image-container">
+              <img class="me" src="jamal1.jpeg" />
+
+              <div class="skill">
+                <img src="f.png" />
+                <div class="skill-content">
+                  <p class="skill-text">SKILL</p>
+                  <p class="dev">React Developer</p>
+                </div>
+              </div>
+
+              <div class="vibe">
+                <img src="g.png" />
+                <div class="skill-content">
+                  <p class="skill-text">VIBE</p>
+                  <p class="dev">Always Excited</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="arrow">
+          <img src="h.png" class="h" />
+        </div>
+      </section>
+    </main>
+
+    <section class="more_about-me">
+      <div class="about_header">
+        <div class="row">
+          <h1 class="More">More About</h1>
+          <h1 class="More2">Me</h1>
+        </div>
+        <p class="content">
+          I might be young, but I'm super dedicated! Here's a little glimpse
+          into who I am.
+        </p>
+      </div>
+
+      <div class="cards">
+        <div class="card1">
+          <img src="a.png" class="tiny" />
+          <p class="card_hed">Student & Learner</p>
+          <p class="p_content">
+            Currently 14 years old and loving every subject! Math and CSS are my
+            absolute favorites.
+          </p>
+        </div>
+
+        <div class="card2">
+          <img src="b.png" class="tiny" />
+          <p class="card_hed">Passionate Coder</p>
+          <p class="p_content">
+            I started coding 5 years ago and haven't stopped since.
+          </p>
+        </div>
+
+        <div class="card3">
+          <img src="c.png" class="tiny" />
+          <p class="card_hed">Tech Enthusiast</p>
+          <p class="p_content">
+            From AI to Web Development, I'm always exploring new technologies.
+          </p>
         </div>
       </div>
-      <div class="right">
-        <div class="right_content">
-          <div class="nav_bar">
-            <a href="about_me.html">
-              <button class="nav_button">
-                <span class="button-content">About Me</span>
-              </button>
-            </a>
-            <a href="skills.html">
-              <button class="nav_button">
-                <span class="button-content">Skills </span>
-              </button>
-            </a>
-            <a href="contact_me.html">
-              <button class="nav_button">
-                <span class="button-content">Contact Me </span>
-              </button>
-            </a>
+    </section>
+
+    <section class="my_experiences">
+      <div class="left_exp">
+        <div class="exp_hed">
+          <h1 class="More">My</h1>
+          <h1 class="More2">Experience</h1>
+        </div>
+        <p class="p_content">
+          Even though I'm still in school, I've had some amazing opportunities.
+        </p>
+      </div>
+
+      <div class="right_exp">
+        <div class="right_cards">
+          <div class="right_card">
+            <img src="bag.png" class="bag" />
+            <div class="right_card_content">
+              <h1 class="right_hed">Frontend Intern</h1>
+              <p class="p_content_color">Qucoon.</p>
+              <p class="p_content">Learned about github, HTML, and CSS!</p>
+            </div>
           </div>
-          <img src="jamal1.jpeg" />
-          <h1 class="Jamal">JAMAL</h1>
+        </div>
+        <div class="right_cards">
+          <div class="right_card">
+            <img src="bag.png" class="bag" />
+            <div class="right_card_content">
+              <h1 class="right_hed">Backend Intern</h1>
+              <p class="p_content_color">Polaris</p>
+              <p class="p_content">
+                Learnt how to manage a database using nestjs and PostgressSQL
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="right_cards">
+          <div class="right_card">
+            <img src="bag.png" class="bag" />
+            <div class="right_card_content">
+              <h1 class="right_hed">Robotics</h1>
+              <p class="p_content_color">AfriEdutech</p>
+              <p class="p_content">
+                My team and I created an obstacle avoidance vehicle. We used C++
+                to program the robot, and I was the lead programmer.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
+
+    <section class="featured_projects">
+      <div class="fhed">
+        <h1 class="title2">Featured <span class="colored2">Projects</span></h1>
+        <p class="p_content3">Check out what I've been building lately!</p>
+      </div>
+
+      <div class="last_row">
+        <div class="no1">
+          <div class="project_overlay">
+            <div class="project_tags">
+              <span>React</span>
+              <span>Three.js</span>
+              <span>Algorithms</span>
+            </div>
+            <h3>Agro Bot</h3>
+            <p class="project_desc">
+              A robot that helps farmers water and check the status of their
+              plant all over WiFi!
+            </p>
+            <button class="project_btn">View Project ↗</button>
+          </div>
+        </div>
+
+        <div class="no2">
+          <div class="project_overlay">
+            <div class="project_tags">
+              <span>React</span>
+              <span>UI Design</span>
+              <span>Frontend</span>
+            </div>
+            <h3>TaskFlow App</h3>
+            <p class="project_desc">A productivity app designed for students</p>
+            <button class="project_btn">View Project ↗</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="footer">
+      <p class="p_content">Made by JAMAL, and with 💖 2025 ©️</p>
     </div>
   </body>
 </html>
