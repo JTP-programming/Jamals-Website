@@ -115,7 +115,7 @@ h4 {
 }
 
 .cards {
-  /* border: 3px solid lime; */
+  border: 3px solid lime;
   display: flex;
   gap: 20px;
 }
