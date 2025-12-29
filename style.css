@@ -406,8 +406,10 @@ h1 {
 }
 
 .content {
+  margin-top: 10px;
   color: #67677e;
   font-size: 25px;
+  width: 400px;
   font-weight: 100;
 }
 
@@ -611,9 +613,16 @@ h3 {
   color: #4cc9f0;
 }
 
-.p_content3 {
-  margin-top: 0.75rem;
-  color: #9aa4c7;
+.p_content {
+  color: #67677e;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.p_contents {
+  color: #67677e;
+  font-size: 20px;
+  font-weight: 100;
 }
 
 .no1,
@@ -691,4 +700,122 @@ h3 {
 
 .no2 {
   background-image: url("comp.png");
+}
+
+@media (min-width: 50px) and (max-width: 850px) {
+  .no1 {
+    width: 400px;
+    height: 500px;
+    background-image: url("comp.png");
+  }
+
+  .no2 {
+    width: 400px;
+    height: 500px;
+    background-image: url("comp.png");
+  }
+  .nav_bar {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .welcome_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .title {
+    /* font-size: 20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hello_box {
+    display: flex;
+    justify-content: center;
+  }
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .right {
+    padding: 150px;
+  }
+
+  .p_content0 {
+    color: #ffff;
+  }
+
+  .more_about-me {
+    width: 100%;
+    height: auto;
+    padding-top: 120px;
+    /* border: 1px solid red; */
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .cards {
+    /* border: 3px solid lime; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .my_experiences {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    padding-bottom: 100px;
+    background-color: #ffffff;
+  }
+  .featured_projects {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  .right_card_content {
+    background-color: #ffffff;
+    display: flex;
+    /* gap: 10px; */
+    border: 2px solid #efeff4;
+    flex-direction: column;
+    border-radius: 20px;
+    /* height: 10%; */
+    width: auto;
+    height: 240px;
+  }
+  .right_card {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    /* border: 10px solid red; */
+    align-items: center;
+    background-color: #ffffff;
+    height: auto;
+    margin-top: 40px;
+    width: 450px;
+  }
+
+  .last_row {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
 }
