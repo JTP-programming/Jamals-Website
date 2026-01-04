@@ -15,26 +15,22 @@
 
   <body>
     <nav class="nav_bar">
-      <a><p class="skill-text">About</p></a>
-      <a><p class="skill-text">Experience</p></a>
-      <a><p class="skill-text">Projects</p></a>
-      <button class="nav-button">Contact Me</button>
+      <a href="#about"><p class="skill-text">About</p></a>
+      <a href="#experience"><p class="skill-text">Experience</p></a>
+      <a href="#projects"><p class="skill-text">Projects</p></a>
+      <a href="#contact">
+        <button class="nav-button">Contact Me</button>
+      </a>
     </nav>
 
     <main class="container">
-      <section class="welcome">
-        <!-- <div class="hello">
-          <h4>👋 Hello there! I'm Jamal</h4>
-        </div> -->
-
+      <section class="welcome" id="about">
         <div class="welcome_content">
-          <!-- <div class="hello">
-            <h4>👋 Hello there! I'm Jamal</h4>
-          </div> -->
           <div class="left">
             <div class="hello">
               <h4>👋 Hello there! I'm Jamal</h4>
             </div>
+
             <h1 class="title">
               Aspiring <span class="colored">Software</span>
               <span class="engine_color">Engineer</span>
@@ -47,8 +43,12 @@
             </div>
 
             <div class="button_div">
-              <button class="button">View My Work</button>
-              <button class="button2">Get in touch</button>
+              <a href="#projects">
+                <button class="button">View My Work</button>
+              </a>
+              <a href="#contact">
+                <button class="button2">Get in touch</button>
+              </a>
             </div>
           </div>
 
@@ -121,7 +121,7 @@
       </div>
     </section>
 
-    <section class="my_experiences">
+    <section class="my_experiences" id="experience">
       <div class="left_exp">
         <div class="exp_hed">
           <h1 class="More">My</h1>
@@ -143,6 +143,7 @@
             </div>
           </div>
         </div>
+
         <div class="right_cards">
           <div class="right_card">
             <img src="bag.png" class="bag" />
@@ -172,7 +173,7 @@
       </div>
     </section>
 
-    <section class="featured_projects">
+    <section class="featured_projects" id="projects">
       <div class="fhed">
         <h1 class="title2">Featured <span class="colored2">Projects</span></h1>
         <p class="p_content3">Check out what I've been building lately!</p>
@@ -209,7 +210,8 @@
         </div>
       </div>
     </section>
-    <div class="footer">
+
+    <div class="footer" id="contact">
       <p class="p_content">Made by JAMAL, and with 💖 2025 ©️</p>
     </div>
   </body>

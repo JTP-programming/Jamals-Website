@@ -819,3 +819,17 @@ h3 {
     gap: 60px;
   }
 }
+
+a {
+  text-decoration: none;
+  font-weight: 800;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section,
+.footer {
+  scroll-margin-top: 90px;
+}
