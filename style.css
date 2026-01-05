@@ -91,7 +91,7 @@ body {
   width: 600px;
   height: 400px;
   background-color: #e0e0e0; /* Skeleton base color */
-  background-image: url("comp.png");
+  background-image: url("hi.png");
   border-radius: 20px;
   background-size: cover;
   background-position: center;
@@ -117,7 +117,7 @@ body {
   width: 600px;
   height: 400px;
   background-color: #e0e0e0; /* Skeleton base color */
-  background-image: url("comp.png");
+  background-image: url("hi.png");
   border-radius: 20px;
   background-size: cover;
   background-position: center;
@@ -789,10 +789,12 @@ h3 {
   padding: 0.3rem 0.75rem;
   font-size: 0.75rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(2, 2, 2, 0.12);
   backdrop-filter: blur(6px);
 }
-
+span {
+  color: #fff;
+}
 .project_overlay h3 {
   font-size: 1.4rem;
   margin-bottom: 0.4rem;
@@ -827,7 +829,7 @@ h3 {
 }
 
 .no2 {
-  background-image: url("comp.png");
+  background-image: url("hi.png");
 }
 .certification {
   background-color: #313131;
