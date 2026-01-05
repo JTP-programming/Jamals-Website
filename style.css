@@ -849,6 +849,9 @@ span {
 }
 
 @media (min-width: 50px) and (max-width: 850px) {
+  body {
+    overflow-x: hidden;
+  }
   .arrow {
     /* border: 10px solid rgb(75, 0, 56); */
     margin-top: 30px;
