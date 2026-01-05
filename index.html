@@ -14,10 +14,6 @@
   </head>
 
   <body>
-    <div id="preloader">
-      <div class="preloader-spinner"></div>
-      <div class="preloader-text">Loading...</div>
-    </div>
     <nav class="nav_bar">
       <a href="#about"><p class="skill-text">About</p></a>
       <a href="#experience"><p class="skill-text">Experience</p></a>
@@ -221,15 +217,5 @@
     <div class="footer" id="contact">
       <p class="p_content">Made by JAMAL, and with 💖 2025 ©️</p>
     </div>
-    <script>
-      window.addEventListener("load", function () {
-        const preloader = document.getElementById("preloader");
-        preloader.classList.add("fade-out");
-        // Optional: remove from DOM after fade
-        setTimeout(() => {
-          preloader.style.display = "none";
-        }, 1000);
-      });
-    </script>
   </body>
 </html>
