@@ -855,6 +855,11 @@ span {
     width: 100px;
     margin-left: 320px;
   }
+  .row {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
   .no1 {
     width: 400px;
     height: 500px;
