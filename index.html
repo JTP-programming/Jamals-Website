@@ -14,6 +14,10 @@
   </head>
 
   <body>
+    <div id="preloader">
+      <div class="preloader-spinner"></div>
+      <div class="preloader-text">Loading...</div>
+    </div>
     <nav class="nav_bar">
       <a href="#about"><p class="skill-text">About</p></a>
       <a href="#experience"><p class="skill-text">Experience</p></a>
@@ -74,7 +78,6 @@
             </div>
           </div>
         </div>
-
         <div class="arrow">
           <img src="h.png" class="h" />
         </div>
@@ -121,8 +124,8 @@
       </div>
     </section>
 
-    <section class="my_experiences" id="experience">
-      <div class="left_exp">
+    <section class="my_experiences">
+      <div class="left_exp" id="experience">
         <div class="exp_hed">
           <h1 class="More">My</h1>
           <h1 class="More2">Experience</h1>
@@ -172,7 +175,11 @@
         </div>
       </div>
     </section>
-
+    <section>
+      <div class="certification">
+        <h1 class="Certification_Title">My Certifications</h1>
+      </div>
+    </section>
     <section class="featured_projects" id="projects">
       <div class="fhed">
         <h1 class="title2">Featured <span class="colored2">Projects</span></h1>
@@ -214,5 +221,15 @@
     <div class="footer" id="contact">
       <p class="p_content">Made by JAMAL, and with 💖 2025 ©️</p>
     </div>
+    <script>
+      window.addEventListener("load", function () {
+        const preloader = document.getElementById("preloader");
+        preloader.classList.add("fade-out");
+        // Optional: remove from DOM after fade
+        setTimeout(() => {
+          preloader.style.display = "none";
+        }, 1000);
+      });
+    </script>
   </body>
 </html>
