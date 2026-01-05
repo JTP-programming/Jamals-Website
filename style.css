@@ -865,6 +865,7 @@ span {
     width: 400px;
     height: 500px;
     background-image: url("hi.png");
+    object-fit: contain;
   }
   .nav_bar {
     display: flex;
