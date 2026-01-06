@@ -431,7 +431,6 @@ h4 {
   gap: 10px;
   flex-direction: row;
   /* border: 10px solid red; */
-  align-items: center;
   background-color: #ffffff;
   height: auto;
   margin-top: 40px;
