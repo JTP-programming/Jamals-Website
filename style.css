@@ -1020,11 +1020,16 @@ section,
   right: 20px;
   z-index: 999;
   font-family: Outfit, system-ui;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: auto;
 }
 
 .chatbot-toggle {
   width: 56px;
   height: 56px;
+  min-width: 56px;
+  min-height: 56px;
   border-radius: 50%;
   background: linear-gradient(135deg, #6347eb, #993fe4);
   color: white;
@@ -1036,6 +1041,8 @@ section,
   box-shadow: 0 4px 12px rgba(99, 71, 235, 0.4);
   transition: all 0.3s ease;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .chatbot-toggle:hover {
@@ -1059,14 +1066,17 @@ section,
   display: none;
   flex-direction: column;
   opacity: 0;
-  transform: scale(0.95) translateY(10px);
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  visibility: hidden;
+  z-index: 1000;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .chatbot-window.active {
   display: flex;
   opacity: 1;
-  transform: scale(1) translateY(0);
+  visibility: visible;
 }
 
 .chatbot-header {
@@ -1216,15 +1226,21 @@ section,
   outline: none;
   transition: border-color 0.2s ease;
   font-family: Outfit, system-ui;
+  appearance: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 20px;
 }
 
 .chatbot-input:focus {
   border-color: #6347eb;
+  outline: none;
 }
 
 .chatbot-send {
   width: 36px;
   height: 36px;
+  min-width: 36px;
+  min-height: 36px;
   border-radius: 50%;
   background: linear-gradient(135deg, #6347eb, #993fe4);
   color: white;
@@ -1236,6 +1252,8 @@ section,
   transition: all 0.2s ease;
   padding: 0;
   flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .chatbot-send:hover {
@@ -1269,26 +1287,146 @@ section,
 @media (max-width: 768px) {
   .chatbot-widget {
     bottom: 16px;
-    right: 16px;
+    right: max(16px, env(safe-area-inset-right));
   }
 
   .chatbot-window {
     width: calc(100vw - 32px);
-    height: 450px;
+    max-width: 380px;
+    height: 60vh;
+    max-height: 500px;
     right: 16px;
     bottom: 90px;
   }
 
   .chatbot-toggle {
-    width: 50px;
-    height: 50px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .chatbot-header h3 {
+    font-size: 15px;
+  }
+
+  .chatbot-input {
+    padding: 12px 14px;
+    font-size: 16px;
+  }
+
+  .message p {
+    font-size: 15px;
+  }
+
+  .chatbot-send {
+    width: 40px;
+    height: 40px;
   }
 }
 
 @media (max-width: 480px) {
+  .chatbot-widget {
+    bottom: max(12px, env(safe-area-inset-bottom));
+    right: max(12px, env(safe-area-inset-right));
+  }
+
   .chatbot-window {
-    width: calc(100vw - 32px);
-    height: 400px;
+    width: calc(100vw - 24px);
     max-width: none;
+    height: 65vh;
+    max-height: 450px;
+    right: 12px;
+    bottom: max(75px, calc(70px + env(safe-area-inset-bottom)));
+    border-radius: 14px;
+  }
+
+  .chatbot-toggle {
+    width: 52px;
+    height: 52px;
+  }
+
+  .chatbot-header {
+    padding: 14px 12px;
+  }
+
+  .chatbot-header h3 {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .chatbot-close {
+    font-size: 24px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .chatbot-messages {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .bot-message p,
+  .user-message p {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .chatbot-input-area {
+    padding: 10px;
+    gap: 6px;
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+  }
+
+  .chatbot-input {
+    padding: 12px 14px;
+    font-size: 16px;
+    border-radius: 18px;
+  }
+
+  .chatbot-send {
+    width: 38px;
+    height: 38px;
+  }
+
+  .chatbot-send svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .message {
+    animation: messageSlide 0.2s ease;
+  }
+}
+
+@media (max-height: 600px) {
+  .chatbot-window {
+    height: calc(100vh - 100px) !important;
+    bottom: 60px !important;
+  }
+}
+
+/* Additional mobile optimizations */
+.chatbot-widget * {
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+.chatbot-input,
+.chatbot-input::-webkit-input-placeholder {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.message p {
+  -webkit-user-select: text;
+  user-select: text;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Prevent iOS auto-zoom on input focus */
+@supports (-webkit-touch-callout: none) {
+  .chatbot-input {
+    font-size: 16px !important;
   }
 }

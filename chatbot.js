@@ -1,32 +1,92 @@
 // Chatbot Widget Functionality
-const chatbotToggle = document.getElementById("chatbotToggle");
-const chatbotClose = document.getElementById("chatbotClose");
-const chatbotWindow = document.getElementById("chatbotWindow");
-const chatbotInput = document.getElementById("chatbotInput");
-const chatbotSend = document.getElementById("chatbotSend");
-const chatbotMessages = document.getElementById("chatbotMessages");
+let chatbotToggle, chatbotClose, chatbotWindow, chatbotInput, chatbotSend, chatbotMessages;
 
 // API Configuration - Add your API key here when ready
 const API_KEY = ""; // Add your API key here
 const API_URL = ""; // Add your API endpoint here
 
+// Initialize chatbot elements once DOM is ready
+function initializeChatbot() {
+  chatbotToggle = document.getElementById("chatbotToggle");
+  chatbotClose = document.getElementById("chatbotClose");
+  chatbotWindow = document.getElementById("chatbotWindow");
+  chatbotInput = document.getElementById("chatbotInput");
+  chatbotSend = document.getElementById("chatbotSend");
+  chatbotMessages = document.getElementById("chatbotMessages");
+
+  if (!chatbotToggle || !chatbotWindow || !chatbotInput) {
+    console.error("Chatbot elements not found");
+    return;
+  }
+
+  attachEventListeners();
+}
+
+// Attach all event listeners
+function attachEventListeners() {
+  // Toggle chatbot window
+  chatbotToggle.addEventListener("click", toggleChatbot);
+
+  // Close chatbot window
+  chatbotClose.addEventListener("click", closeChatbot);
+
+  // Send message on button click
+  chatbotSend.addEventListener("click", sendMessage);
+
+  // Send message on Enter key
+  chatbotInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
+  });
+
+  // Scroll to bottom when keyboard appears (iOS fix)
+  chatbotInput.addEventListener("focus", () => {
+    setTimeout(() => {
+      if (chatbotMessages) {
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+      }
+    }, 300);
+  });
+}
+
 // Toggle chatbot window
-chatbotToggle.addEventListener("click", () => {
+function toggleChatbot() {
+  if (!chatbotWindow) return;
+  
   chatbotWindow.classList.toggle("active");
   chatbotToggle.classList.toggle("active");
+  
   if (chatbotWindow.classList.contains("active")) {
-    chatbotInput.focus();
+    setTimeout(() => {
+      if (chatbotInput) {
+        chatbotInput.focus();
+      }
+      if (chatbotMessages) {
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+      }
+    }, 100);
   }
-});
+}
 
 // Close chatbot window
-chatbotClose.addEventListener("click", () => {
+function closeChatbot() {
+  if (!chatbotWindow) return;
   chatbotWindow.classList.remove("active");
   chatbotToggle.classList.remove("active");
-});
+}
+
+// Initialize when DOM is ready
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializeChatbot);
+} else {
+  initializeChatbot();
+}
 
 // Send message function
 function sendMessage() {
+  if (!chatbotInput || !chatbotMessages) return;
+  
   const message = chatbotInput.value.trim();
   if (message === "") return;
 
@@ -39,7 +99,11 @@ function sendMessage() {
   loadingDiv.classList.add("message", "bot-message", "loading");
   loadingDiv.innerHTML = "<p><span></span><span></span><span></span></p>";
   chatbotMessages.appendChild(loadingDiv);
-  chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  
+  // Scroll to bottom
+  setTimeout(() => {
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }, 50);
 
   // Get bot response
   if (API_KEY && API_URL) {
@@ -48,9 +112,9 @@ function sendMessage() {
   } else {
     // Use fallback responses
     setTimeout(() => {
-      loadingDiv.remove();
-      const botResponse = getFallbackResponse(message);
-      addMessage(botResponse, "bot");
+      if (loadingDiv.parentNode) {
+        loadingDiv.remove();
+      }
     }, 500);
   }
 }
@@ -89,11 +153,17 @@ async function callAPI(userMessage, loadingDiv) {
 
 // Add message to chat
 function addMessage(text, sender) {
+  if (!chatbotMessages) return;
+  
   const messageDiv = document.createElement("div");
   messageDiv.classList.add("message", sender + "-message");
   messageDiv.innerHTML = `<p>${escapeHtml(text)}</p>`;
   chatbotMessages.appendChild(messageDiv);
-  chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+  // Simple scroll for better iOS compatibility
+  setTimeout(() => {
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }, 50);
 }
 
 // Fallback responses when no API is configured
@@ -140,12 +210,3 @@ function escapeHtml(text) {
   return text.replace(/[&<>"']/g, (m) => map[m]);
 }
 
-// Send message on button click
-chatbotSend.addEventListener("click", sendMessage);
-
-// Send message on Enter key
-chatbotInput.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") {
-    sendMessage();
-  }
-});
